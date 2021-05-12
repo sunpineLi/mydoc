@@ -33,3 +33,18 @@ String 中的对象是不可变的，也就可以理解为常量，线程安全�
 1. 操作少量的数据: 适用String
 2. 单线程操作字符串缓冲区下操作大量数据: 适用StringBuilder
 3. 多线程操作字符串缓冲区下操作大量数据: 适用StringBuffer
+
+
+## 2. 在 Java 中定义一个不做事且没有参数的构造方法的作用
+Java 程序在执行子类的构造方法之前，如果没有用 super()来调用父类特定的构造方法，则会调用父类中“没有参数的构造方法”。因此，如果父类中只定义了有参数的构造方法，而在子类的构造方法中又没有用 super()来调用父类中特定的构造方法，则编译时将发生错误，因为 Java 程序在父类中找不到没有参数的构造方法可供执行。解决办法是在父类里加上一个不做事且没有参数的构造方法。 　
+
+## 3 获取用键盘输入常用的两种方法
+方法1：通过 Scanner
+
+Scanner input = new Scanner(System.in);
+String s  = input.nextLine();
+input.close();
+方法2：通过 BufferedReader
+
+BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+String s = input.readLine();
